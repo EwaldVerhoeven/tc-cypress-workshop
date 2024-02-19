@@ -1,0 +1,5 @@
+node_modules/
+tests/videos/
+tests/screenshots/
+.env
+cypress.env.json
