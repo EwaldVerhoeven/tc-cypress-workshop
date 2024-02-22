@@ -1,5 +1,8 @@
 describe("My first test", () => {
-  it("successful manual login", function () {
+  before(function () {
     cy.loginRpg("ewald@testcoders.nl", "securePassword123");
+  });
+  it("successful manual login", function () {
+    cy.log("this a test");
   });
 });

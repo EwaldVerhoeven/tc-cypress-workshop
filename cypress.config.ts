@@ -10,7 +10,7 @@ export default defineConfig({
     watchForFileChanges: false,
     screenshotsFolder: "tests/screenshots",
     videosFolder: "tests/videos",
-    fixturesFolder: "tests/fixture",
+    fixturesFolder: "tests/fixtures",
 
     viewportHeight: 960, //like macbook-16
     viewportWidth: 1650, // bigger then macbook-16. To avoid horizontal scrolling
