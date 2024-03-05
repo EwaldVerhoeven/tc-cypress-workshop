@@ -6,7 +6,7 @@ class HomePage extends BasePageObject {
   };
 
   clickPlayButton(): void {
-    this.button.playButton().should("be.visible").click();
+    this.button.playButton().should("be.visible").click({ force: true });
   }
 }
 

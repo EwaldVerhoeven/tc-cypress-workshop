@@ -1,10 +1,10 @@
 declare namespace Cypress {
   interface Chainable {
-    loginRpg(username: string, password: string): Chainable<Element>;
+    login(username: string, password: string): Chainable<Element>;
   }
 }
 
-Cypress.Commands.add("loginRpg", (username, password) => {
+Cypress.Commands.add("login", (username, password) => {
   cy.session([username, password], () => {
     cy.visit("/");
     cy.get("[data-testid='login-button']").should("be.visible").click();
