@@ -88,7 +88,7 @@ class GamePage extends BasePageObject {
     {
       levelUp
         ? this.checkLevelUp(
-            "Slid to the next level",
+            "Slid to the next level!",
             this.taskLabels.sliderTaskLabel,
           )
         : "";

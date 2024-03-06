@@ -1,6 +1,13 @@
 import { HomePage, PlayPage, GamePage } from "./pages";
 
 describe("Game play", () => {
+  before(function () {
+    cy.request("/api/builds?build=mage") // (random)request to simulate 'preparing' stuff like testing for a certain state
+      .then((resp) => {
+        expect(resp.status).to.eq(200);
+      });
+  });
+
   beforeEach(function () {
     // Fixture API option 1
     cy.fixture("testdata.json").then(function (data) {
