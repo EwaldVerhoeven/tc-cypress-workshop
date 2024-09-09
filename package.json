@@ -17,5 +17,8 @@
     "cypress": "^13.1.0",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@cypress/schema-tools": "^4.7.10"
   }
 }

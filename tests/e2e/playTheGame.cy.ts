@@ -32,7 +32,6 @@ describe("Game play", () => {
     // cy.wait("@builds").its("response.statusCode").should("eq", 200); // Intercept 1 - waiting
     PlayPage.enterName(role.name);
     PlayPage.selectBuild(role.build);
-    
 
     PlayPage.clickStart();
     GamePage.clickClickMeButton(5, true);
