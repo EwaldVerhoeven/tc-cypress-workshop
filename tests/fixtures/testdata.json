@@ -1,7 +1,6 @@
 {
-    "role": {
-      "name": "henk",
-      "build": "Mage"
-    }
+  "role": {
+    "name": "henk",
+    "build": "Mage"
   }
-  
+}
