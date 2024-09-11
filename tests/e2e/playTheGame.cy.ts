@@ -1,8 +1,8 @@
 describe("Game play", () => {
   beforeEach(() => {
-    // cy.fixture("testdata.json").then(function (data) {
-    //   this.testData = data;
-    // });
+    cy.fixture("testdata.json").then(function (data) {
+      this.testData = data;
+    });
     // cy.fixture("testdata.json").as("data") //OPTION 2: acces data with 'this.data.name'
     cy.login("ewald@testcoders.nl", "securePassword123");
     cy.visit("/");
