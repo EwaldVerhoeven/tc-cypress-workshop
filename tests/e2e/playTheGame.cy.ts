@@ -1,18 +1,24 @@
 describe("Game play", () => {
   beforeEach(() => {
+    // cy.fixture("testdata.json").then(function (data) {
+    //   this.testData = data;
+    // });
+    // cy.fixture("testdata.json").as("data") //OPTION 2: acces data with 'this.data.name'
     cy.login("ewald@testcoders.nl", "securePassword123");
     cy.visit("/");
   });
 
-  it("play the game as expected", () => {
+  it("play the game as expected", function () {
+    const { role } = this.testData // Required for OPTION 1 --> access data with 'this.role.name' (for example)
+
     cy.get("a[href='/play']").should("be.visible").click({ force: true });
     cy.get("[data-testid='character-card']") // yields 2 elements
       .first()
       .next()
       .find("input[name='name']")
       .should("be.visible")
-      .type("Henk");
-    cy.get("select").should("be.visible").select("Mage", { force: true });
+      .type(role.name);
+    cy.get("select").should("be.visible").select(role.build, { force: true });
     cy.get("button").contains("Start!").should("be.visible").click();
 
     for (let n = 0; n < 5; n++) {
