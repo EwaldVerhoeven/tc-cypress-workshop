@@ -1,10 +1,20 @@
 describe("Game play", () => {
+  before( ()=> {
+    cy.request("/api/builds?build=mage") // (random)request to simulate 'preparing' stuff like testing for a certain state
+        .then((resp) => {
+          expect(resp.status).to.eq(200);
+          console.log(resp);
+        });
+  })
+
   beforeEach(() => {
     cy.login("ewald@testcoders.nl", "securePassword123");
     cy.visit("/");
   });
 
   it("play the game as expected", () => {
+    cy.intercept("GET", "api/builds", { fixture: "pumpitup.json" });
+
     cy.get("a[href='/play']").should("be.visible").click({ force: true });
     cy.get("[data-testid='character-card']") // yields 2 elements
       .first()
